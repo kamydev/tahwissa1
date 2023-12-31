@@ -44,9 +44,7 @@ class HomePage extends StatelessWidget {
         children: [
           // LOCATION CARD
           const LocationCard(),
-          const SizedBox(
-            height: 15,
-          ),
+          const SizedBox(height: 15),
           const TouristPlaces(),
           // CATEGORIES
           const SizedBox(height: 10),

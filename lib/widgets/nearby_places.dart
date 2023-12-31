@@ -3,6 +3,7 @@ import 'package:travel_app/models/nearby_places_model.dart';
 import 'package:travel_app/pages/tourist_details_page.dart';
 import 'package:travel_app/widgets/distance.dart';
 
+// ignore: must_be_immutable
 class NearbyPlaces extends StatelessWidget {
   const NearbyPlaces({Key? key}) : super(key: key);
 
@@ -28,6 +29,10 @@ class NearbyPlaces extends StatelessWidget {
                       MaterialPageRoute(
                         builder: (context) => TouristDetailsPage(
                           image: nearbyPlaces[index].image,
+                          myTitle: nearbyPlaces[index].title,
+                          mySubtitle: nearbyPlaces[index].subTitle,
+                          myDescription: nearbyPlaces[index].description,
+                          myRating: '${nearbyPlaces[index].rating}',
                         ),
                       ));
                 },
@@ -49,17 +54,17 @@ class NearbyPlaces extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
-                              "Frenschy",
-                              style: TextStyle(
+                            Text(
+                              nearbyPlaces[index].title,
+                              style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            const Text("Constantine"),
+                            Text(nearbyPlaces[index].subTitle),
                             const SizedBox(height: 10),
                             // DISTANCE WIDGET
-                            const Distance(),
+                            Distance(),
                             const Spacer(),
                             Row(
                               children: [
@@ -68,11 +73,9 @@ class NearbyPlaces extends StatelessWidget {
                                   color: Colors.yellow.shade700,
                                   size: 14,
                                 ),
-                                const Text(
-                                  "4.5",
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                  ),
+                                Text(
+                                  '${nearbyPlaces[index].rating}',
+                                  style: const TextStyle(fontSize: 12),
                                 ),
                                 const Spacer(),
                                 RichText(
@@ -81,7 +84,7 @@ class NearbyPlaces extends StatelessWidget {
                                         fontSize: 20,
                                         color: Theme.of(context).primaryColor,
                                       ),
-                                      text: "500da",
+                                      text: nearbyPlaces[index].price,
                                       children: const [
                                         TextSpan(
                                             style: TextStyle(

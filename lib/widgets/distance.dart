@@ -1,8 +1,16 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 
 class Distance extends StatelessWidget {
-  const Distance({Key? key}) : super(key: key);
+  String theStart = 'Constantine';
+  String theEnd = 'Algiers';
+  Distance({
+    Key? key,
+    String? theStart,
+    String? theEnd,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +21,9 @@ class Distance extends StatelessWidget {
           color: Colors.black54,
           size: 14,
         ),
-        const Text(
-          "Constantine",
-          style: TextStyle(
+        Text(
+          theStart,
+          style: const TextStyle(
             color: Colors.black54,
           ),
         ),
@@ -39,7 +47,7 @@ class Distance extends StatelessWidget {
         ),
         const SizedBox(width: 2),
         Text(
-          "Hdik lblasa",
+          theEnd,
           style: TextStyle(
             color: Theme.of(context).primaryColor,
           ),

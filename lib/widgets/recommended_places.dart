@@ -31,6 +31,10 @@ class RecommendedPlaces extends StatelessWidget {
                         MaterialPageRoute(
                           builder: (context) => TouristDetailsPage(
                             image: recommendedPlaces[index].image,
+                            myTitle: recommendedPlaces[index].title,
+                            mySubtitle: recommendedPlaces[index].location,
+                            myDescription: recommendedPlaces[index].description,
+                            myRating: '${recommendedPlaces[index].rating}',
                           ),
                         ));
                   },
@@ -50,10 +54,10 @@ class RecommendedPlaces extends StatelessWidget {
                         const SizedBox(height: 5),
                         Row(
                           children: [
-                            const Text(
-                              "St Regis Bora Bora",
-                              style: TextStyle(
-                                fontSize: 15,
+                            Text(
+                              recommendedPlaces[index].title,
+                              style: const TextStyle(
+                                fontSize: 13,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -63,11 +67,9 @@ class RecommendedPlaces extends StatelessWidget {
                               color: Colors.yellow.shade700,
                               size: 14,
                             ),
-                            const Text(
-                              "4.4",
-                              style: TextStyle(
-                                fontSize: 12,
-                              ),
+                            Text(
+                              '${recommendedPlaces[index].rating}',
+                              style: const TextStyle(fontSize: 12),
                             )
                           ],
                         ),
@@ -80,11 +82,9 @@ class RecommendedPlaces extends StatelessWidget {
                               size: 16,
                             ),
                             const SizedBox(width: 5),
-                            const Text(
-                              "French Polynesia",
-                              style: TextStyle(
-                                fontSize: 12,
-                              ),
+                            Text(
+                              recommendedPlaces[index].location,
+                              style: const TextStyle(fontSize: 12),
                             )
                           ],
                         )

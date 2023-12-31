@@ -7,8 +7,16 @@ class TouristDetailsPage extends StatelessWidget {
   const TouristDetailsPage({
     Key? key,
     required this.image,
+    required this.myTitle,
+    required this.mySubtitle,
+    required this.myRating,
+    required this.myDescription,
   }) : super(key: key);
   final String image;
+  final String myTitle;
+  final String mySubtitle;
+  final String myRating;
+  final String myDescription;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -79,12 +87,12 @@ class TouristDetailsPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Sea of Peace",
+                      myTitle,
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
                     const SizedBox(height: 5),
                     Text(
-                      "Portic Team 8km",
+                      mySubtitle,
                       style: Theme.of(context).textTheme.bodySmall,
                     )
                   ],
@@ -102,7 +110,7 @@ class TouristDetailsPage extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      "4.6",
+                      myRating,
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
                     Icon(
@@ -115,29 +123,36 @@ class TouristDetailsPage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 15),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      "01d:32h:56m",
-                      style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
-                    ),
-                    const SizedBox(height: 5),
-                    Text(
-                      "Started in",
-                      style: Theme.of(context).textTheme.bodySmall,
-                    )
-                  ],
-                ),
-              ],
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //   children: [
+            //     Column(
+            //       crossAxisAlignment: CrossAxisAlignment.start,
+            //       mainAxisSize: MainAxisSize.min,
+            //       children: [
+            //         Text(
+            //           "01d:32h:56m",
+            //           style: Theme.of(context).textTheme.titleLarge!.copyWith(
+            //                 color: Theme.of(context).colorScheme.primary,
+            //               ),
+            //         ),
+            //         const SizedBox(height: 5),
+            //         Text(
+            //           "Started in",
+            //           style: Theme.of(context).textTheme.bodySmall,
+            //         )
+            //       ],
+            //     ),
+            //   ],
+            // ),
+            Container(
+              alignment: AlignmentDirectional.center,
+              child: Text(
+                myDescription,
+                
+              ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
             Container(
               height: 180,
               width: double.maxFinite,
@@ -151,7 +166,7 @@ class TouristDetailsPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 15),
-            const Distance(),
+            Distance(),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {},
