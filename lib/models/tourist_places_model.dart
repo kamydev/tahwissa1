@@ -9,12 +9,12 @@ class TouristPlacesModel {
 }
 
 List<TouristPlacesModel> touristPlaces = [
-  TouristPlacesModel(name: "City", image: "assets/icons/city.png"),
-  TouristPlacesModel(name: "Restaurants", image: "assets/icons/hamburger.jpg"),
+  TouristPlacesModel(name: "City", image: "assets/icons/city.jpg"),
+  TouristPlacesModel(name: "Restaurants", image: "assets/icons/food.jpg"),
   TouristPlacesModel(name: "Hotels", image: "assets/icons/hotel.jpg"),
-  TouristPlacesModel(name: "Historical Sites", image: "assets/icons/Hestorical.jpg"),
-  TouristPlacesModel(name: "Beach", image: "assets/icons/beach1.jpg"),
-  TouristPlacesModel(name: "Sahara", image: "assets/icons/saharaa.png"),
+  TouristPlacesModel(name: "Historical Sites", image: "assets/icons/histo.jpg"),
+  TouristPlacesModel(name: "Beach", image: "assets/icons/beach.jpg"),
+  TouristPlacesModel(name: "Sahara", image: "assets/icons/desert.png"),
   // TouristPlacesModel(name: "Forest", image: "assets/icons/forest.png"),
 ];
 

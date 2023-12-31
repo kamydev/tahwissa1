@@ -17,7 +17,7 @@ class TouristPlaces extends StatelessWidget {
             avatar: CircleAvatar(
               backgroundImage: AssetImage(touristPlaces[index].image),
             ),
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.blueGrey.shade200,
             elevation: 0.4,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),

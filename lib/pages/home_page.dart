@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 // import 'package:travel_app/widgets/custom_icon_button.dart';
-import 'package:travel_app/widgets/location_card.dart';
+// import 'package:travel_app/widgets/location_card.dart';
 import 'package:travel_app/widgets/nearby_places.dart';
 import 'package:travel_app/widgets/recommended_places.dart';
 import 'package:travel_app/widgets/tourist_places.dart';
@@ -14,23 +14,39 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-   bool _isSearchVisible = false;
-   final TextEditingController _searchController = TextEditingController();
+  bool _isSearchVisible = false;
+  final TextEditingController _searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey.shade500,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.blueGrey.shade400,
         foregroundColor: Colors.black,
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        title: Row(
           children: [
-            const Text("Welcome To Tahwissa"),
-            Text(
-              "Discover Algeria",
-              style: Theme.of(context).textTheme.labelMedium,
+            Image.asset(
+              'assets/map.png',
+              width: 80,
+            ),
+            const SizedBox(width: 10),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  "TAHWISSSA",
+                  style: TextStyle(
+                      fontFamily: 'Cinzel',
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.2),
+                ),
+                Text(
+                  " Discover Algeria",
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+              ],
             ),
           ],
         ),
@@ -40,9 +56,7 @@ class _HomePageState extends State<HomePage> {
             child: IconButton(
               icon: const Icon(Ionicons.search_outline),
               onPressed: () {
-                setState(() {
-                  _isSearchVisible = true;
-                });
+                setState(() => _isSearchVisible = true);
               },
             ),
           ),
@@ -89,24 +103,31 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           Expanded(
+            // backgroundColor : Colors.blueGrey.shade300,
             child: ListView(
               physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.all(14),
               children: [
                 // LOCATION CARD
-                const LocationCard(),
-                const SizedBox(height: 15),
+                // const LocationCard(),
+                // const SizedBox(height: 15),
                 const TouristPlaces(),
-                // CATEGORIES
-                const SizedBox(height: 10),
+                const SizedBox(height: 5),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Recommendation",
+                      "Popular Nearby",
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
-                    TextButton(onPressed: () {}, child: const Text("View All"))
+                    TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          "View All",
+                          style: TextStyle(
+                            color: Colors.black54,
+                          ),
+                        ))
                   ],
                 ),
                 const SizedBox(height: 10),
@@ -116,10 +137,15 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Nearby From You",
+                      "Recommendation",
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
-                    TextButton(onPressed: () {}, child: const Text("View All"))
+                    TextButton(
+                        onPressed: () {},
+                        child: const Text("View All",
+                            style: TextStyle(
+                              color: Colors.black54,
+                            )))
                   ],
                 ),
                 const SizedBox(height: 10),
@@ -130,6 +156,9 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.blueGrey.shade400,
+        selectedItemColor: Colors.white,
+        // unselectedItemColor: Colors.white54,
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         showUnselectedLabels: false,
@@ -142,7 +171,6 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(Ionicons.bookmark_outline),
             label: "Bookmark",
           ),
-
           BottomNavigationBarItem(
             icon: Icon(Ionicons.person_outline),
             label: "Profile",

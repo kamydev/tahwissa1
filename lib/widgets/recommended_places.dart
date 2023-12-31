@@ -17,6 +17,7 @@ class RecommendedPlaces extends StatelessWidget {
             return SizedBox(
               width: 220,
               child: Card(
+                color: Colors.blueGrey.shade200 ,
                 elevation: 0.4,
                 shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(
