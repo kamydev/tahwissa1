@@ -17,7 +17,7 @@ class RecommendedPlaces extends StatelessWidget {
             return SizedBox(
               width: 220,
               child: Card(
-                color: Colors.blueGrey.shade200 ,
+                color: const Color.fromARGB(255, 37, 157, 255),
                 elevation: 0.4,
                 shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(
@@ -60,6 +60,7 @@ class RecommendedPlaces extends StatelessWidget {
                               style: const TextStyle(
                                 fontSize: 13,
                                 fontWeight: FontWeight.bold,
+                                color: Colors.white
                               ),
                             ),
                             const Spacer(),
@@ -70,22 +71,25 @@ class RecommendedPlaces extends StatelessWidget {
                             ),
                             Text(
                               '${recommendedPlaces[index].rating}',
-                              style: const TextStyle(fontSize: 12),
+                              style: const TextStyle(
+                                fontSize: 12,
+                                color: Colors.white,
+                              ),
                             )
                           ],
                         ),
                         const SizedBox(height: 5),
                         Row(
                           children: [
-                            Icon(
+                            const Icon(
                               Ionicons.location,
-                              color: Theme.of(context).primaryColor,
+                              color: Colors.white,
                               size: 16,
                             ),
                             const SizedBox(width: 5),
                             Text(
                               recommendedPlaces[index].location,
-                              style: const TextStyle(fontSize: 12),
+                              style: const TextStyle(fontSize: 12,color: Colors.white,),
                             )
                           ],
                         )

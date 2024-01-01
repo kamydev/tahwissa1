@@ -4,12 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 
 class Distance extends StatelessWidget {
-  String theStart = 'Constantine';
-  String theEnd = 'Algiers';
-  Distance({
+  const Distance({
     Key? key,
-    String? theStart,
-    String? theEnd,
   }) : super(key: key);
 
   @override
@@ -18,16 +14,16 @@ class Distance extends StatelessWidget {
       children: [
         const Icon(
           Ionicons.locate_outline,
-          color: Colors.black54,
+          color: Colors.white,
           size: 14,
-        ),
-        Text(
-          theStart,
-          style: const TextStyle(
-            color: Colors.black54,
+        ),const SizedBox(width: 5),
+        const Text(
+          'Constantine',
+          style: TextStyle(
+            color: Colors.white,
           ),
         ),
-        const SizedBox(width: 3),
+        const SizedBox(width: 5),
         ...List.generate(
           18,
           (index) {
@@ -40,16 +36,16 @@ class Distance extends StatelessWidget {
           },
         ),
         const SizedBox(width: 3),
-        Icon(
+        const Icon(
           Ionicons.location_outline,
           size: 14,
-          color: Theme.of(context).primaryColor,
+          color: Colors.white,
         ),
         const SizedBox(width: 2),
-        Text(
-          theEnd,
+        const Text(
+          'Algiers',
           style: TextStyle(
-            color: Theme.of(context).primaryColor,
+            color: Colors.white,
           ),
         )
       ],
