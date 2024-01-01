@@ -10,36 +10,43 @@ class WelcomePage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/places/seraidi.JPG'),
+                image: const AssetImage('assets/places/Background.jpg'),
                 fit: BoxFit.cover,
-                opacity: 0.78),
+                opacity: 0.78,
+                colorFilter: ColorFilter.mode(Colors.blue.shade300,BlendMode.darken )),
           ),
           child: Center(
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
+                  const SizedBox(height: 200),
+                  Image.asset('assets/icons/tahwissaLogo.png',scale: 100,),
                   const SizedBox(height: 30),
                   const Text(
                     "Welcome to TAHWISSA",
                     textAlign: TextAlign.center,
                     style: TextStyle(
+                      color: Colors.white,
                         fontSize: 27,
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'Cinzel',
+                        // fontFamily: 'Montserrat',
+                        fontFamily: 'Cabin',
                         letterSpacing : 1.6 ,
                         ),
                   ),
-                  const SizedBox(height: 3),
+                  const SizedBox(height: 5),
                   const Text(
                     // "Find your perfect vacation in Algeria, \n and plan your trip.",
                     "Discover the magnificent places in Algeria \nand plan your trip.",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: Colors.black54,
+                        fontWeight : FontWeight.w500,
+                      color: Colors.white,
                       fontSize: 16,
+                      letterSpacing: 1.1
                     ),
                   ),
                   const Spacer(),
@@ -57,7 +64,8 @@ class WelcomePage extends StatelessWidget {
                           );
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blueGrey.shade900,
+                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.black,
                           elevation: 0,
                           shape: const StadiumBorder(),
                           padding: const EdgeInsets.symmetric(
@@ -68,10 +76,9 @@ class WelcomePage extends StatelessWidget {
                         child: const Text(
                           "Get Started",
                           style: TextStyle(
-                            fontStyle: FontStyle.italic,
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.bold,
                             letterSpacing: 1.5 ,
-                            fontSize: 14
+                            fontSize: 16
                           ),
                         ),
                       ),

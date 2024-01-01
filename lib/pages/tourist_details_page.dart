@@ -86,15 +86,15 @@ class TouristDetailsPage extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      myTitle,
-                      style: Theme.of(context).textTheme.titleLarge,
-                    ),
+                    Text(myTitle,
+                        style: const TextStyle(
+                            fontSize: 28,
+                            fontFamily: 'Cabin')),
                     const SizedBox(height: 5),
-                    Text(
-                      mySubtitle,
-                      style: Theme.of(context).textTheme.bodySmall,
-                    )
+                    Text(mySubtitle,
+                        style: const TextStyle(
+                            fontSize: 14,
+                            fontFamily: 'Cabin'))
                   ],
                 ),
                 const Spacer(),
@@ -109,10 +109,11 @@ class TouristDetailsPage extends StatelessWidget {
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      myRating,
-                      style: Theme.of(context).textTheme.bodySmall,
-                    ),
+                    Text(myRating,
+                        style: const TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Cabin',)),
                     Icon(
                       Ionicons.star,
                       color: Colors.yellow[800],
@@ -147,10 +148,7 @@ class TouristDetailsPage extends StatelessWidget {
             // ),
             Container(
               alignment: AlignmentDirectional.center,
-              child: Text(
-                myDescription,
-                
-              ),
+              child: Text(myDescription,style:const TextStyle(fontFamily: 'Cabin',fontSize: 16))
             ),
             const SizedBox(height: 20),
             Container(
@@ -166,7 +164,7 @@ class TouristDetailsPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 15),
-            Distance(),
+            const Distance(),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {},

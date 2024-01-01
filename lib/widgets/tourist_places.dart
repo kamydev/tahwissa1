@@ -13,11 +13,14 @@ class TouristPlaces extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return Chip(
-            label: Text(touristPlaces[index].name),
+            label: Text(
+              touristPlaces[index].name,
+              style: const TextStyle(color: Colors.white),
+            ),
             avatar: CircleAvatar(
               backgroundImage: AssetImage(touristPlaces[index].image),
             ),
-            backgroundColor: Colors.blueGrey.shade200,
+            backgroundColor: const Color.fromARGB(255, 0, 137, 179),
             elevation: 0.4,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),

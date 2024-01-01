@@ -17,7 +17,7 @@ class NearbyPlaces extends StatelessWidget {
             height: 135,
             width: double.maxFinite,
             child: Card(
-              color: Colors.blueGrey.shade200 ,
+              color: const Color.fromARGB(255, 37, 157, 255),
               elevation: 0.4,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
@@ -58,14 +58,20 @@ class NearbyPlaces extends StatelessWidget {
                             Text(
                               nearbyPlaces[index].title,
                               style: const TextStyle(
+                                fontFamily: 'Cabin',
+                                color: Colors.white,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Text(nearbyPlaces[index].subTitle),
+                            Text(nearbyPlaces[index].subTitle,
+                                style: const TextStyle(
+                                fontFamily: 'Cabin',
+                                  color: Colors.white,
+                                )),
                             const SizedBox(height: 10),
                             // DISTANCE WIDGET
-                            Distance(),
+                            const Distance(),
                             const Spacer(),
                             Row(
                               children: [
@@ -76,23 +82,26 @@ class NearbyPlaces extends StatelessWidget {
                                 ),
                                 Text(
                                   '${nearbyPlaces[index].rating}',
-                                  style: const TextStyle(fontSize: 12),
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.white,
+                                  ),
                                 ),
                                 const Spacer(),
                                 RichText(
                                   text: TextSpan(
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 20,
-                                        color: Theme.of(context).primaryColor,
+                                        color: Colors.white,
                                       ),
                                       text: nearbyPlaces[index].price,
                                       children: const [
                                         TextSpan(
                                             style: TextStyle(
                                               fontSize: 12,
-                                              color: Colors.black54,
+                                              color: Colors.white,
                                             ),
-                                            text: "/ Person")
+                                            text: " /Person")
                                       ]),
                                 )
                               ],

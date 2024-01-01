@@ -20,34 +20,37 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey.shade500,
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        toolbarHeight: 80,
         elevation: 0,
-        backgroundColor: Colors.blueGrey.shade400,
-        foregroundColor: Colors.black,
+        backgroundColor: const Color.fromARGB(255, 0, 81, 106),
+        foregroundColor: Colors.white,
         title: Row(
           children: [
-            Image.asset(
-              'assets/map.png',
-              width: 80,
-            ),
-            const SizedBox(width: 10),
-            Column(
+            const SizedBox(width: 5),
+            const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   "TAHWISSSA",
                   style: TextStyle(
-                      fontFamily: 'Cinzel',
+                      fontSize: 23,
+                      fontFamily: 'Cabin',
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.2),
                 ),
                 Text(
                   " Discover Algeria",
-                  style: Theme.of(context).textTheme.bodyLarge,
-                ),
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      color: Colors.white),
+                )
               ],
             ),
+            const SizedBox(width: 20),
+            Image.asset('assets/icons/tahwissaLogo.png', width: 55),
           ],
         ),
         actions: [
@@ -89,26 +92,30 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           if (_isSearchVisible)
-            Padding(
-              padding: const EdgeInsets.all(14),
-              child: TextField(
-                controller: _searchController,
-                decoration: InputDecoration(
-                  prefixIcon: const Icon(Ionicons.search_outline),
-                  hintText: 'Search...',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+            Container(
+              color: const Color(0xFF37c4ee),
+              child: Padding(
+                padding: const EdgeInsets.all(14),
+                child: Container(
+                  color: Colors.white,
+                  child: TextField(
+                    controller: _searchController,
+                    decoration: InputDecoration(
+                      prefixIcon: const Icon(Ionicons.search_outline),
+                      hintText: 'Search...',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
                   ),
                 ),
               ),
             ),
           Expanded(
-            // backgroundColor : Colors.blueGrey.shade300,
             child: ListView(
               physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.all(14),
               children: [
-                // LOCATION CARD
                 // const LocationCard(),
                 // const SizedBox(height: 15),
                 const TouristPlaces(),
@@ -116,15 +123,19 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "Popular Nearby",
-                      style: Theme.of(context).textTheme.titleLarge,
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 0, 50, 66),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 22),
                     ),
                     TextButton(
                         onPressed: () {},
                         child: const Text(
                           "View All",
                           style: TextStyle(
+                            fontFamily: 'Cabin',
                             color: Colors.black54,
                           ),
                         ))
@@ -136,14 +147,18 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "Recommendation",
-                      style: Theme.of(context).textTheme.titleLarge,
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 0, 50, 66),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 22),
                     ),
                     TextButton(
                         onPressed: () {},
                         child: const Text("View All",
                             style: TextStyle(
+                              fontFamily: 'Cabin',
                               color: Colors.black54,
                             )))
                   ],
@@ -156,8 +171,9 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.blueGrey.shade400,
+        backgroundColor: const Color.fromARGB(255, 0, 81, 106),
         selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white54,
         // unselectedItemColor: Colors.white54,
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
